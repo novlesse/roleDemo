@@ -22,6 +22,11 @@ namespace roleDemo.Controllers
             _context = context;
         }
 
+        public IActionResult justinPage()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             string note = "This is to test my git commit.";
