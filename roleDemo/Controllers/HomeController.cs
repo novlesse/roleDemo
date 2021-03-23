@@ -24,6 +24,7 @@ namespace roleDemo.Controllers
 
         public IActionResult Index()
         {
+            string note = "This is to test my git commit.";
             return View();
         }
 
@@ -35,7 +36,6 @@ namespace roleDemo.Controllers
             string userName = User.Identity.Name;
             ViewBag.userName = userName;
             
-
             return View();
         }
 
