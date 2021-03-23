@@ -35,6 +35,12 @@ namespace roleDemo.Controllers
         }
 
         [Authorize]
+        public IActionResult JeffPage()
+        {
+            return View();
+        }
+
+        [Authorize]
         public IActionResult SecureArea()
         {
             // Get user name of user who is logged in.
