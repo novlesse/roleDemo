@@ -68,6 +68,18 @@ namespace roleDemo
                 };
             });
 
+            services.AddAuthentication()
+            .AddGoogle(options =>
+            {
+                IConfigurationSection googleAuthNSection =
+                    Configuration.GetSection("Authentication:Google");
+
+                options.ClientId = googleAuthNSection["ClientId"];
+                options.ClientSecret = googleAuthNSection["ClientSecret"];
+                options.CallbackPath = "/Home/Index";
+            });
+
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationDbContext>();
