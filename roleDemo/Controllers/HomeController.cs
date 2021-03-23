@@ -22,6 +22,7 @@ namespace roleDemo.Controllers
             _context = context;
         }
 
+        [Authorize]
         public IActionResult justinPage()
         {
             return View();
